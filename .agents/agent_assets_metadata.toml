@@ -1,8 +1,0 @@
-uploads = []
-outputs = []
-
-[[generated]]
-id = "zmtBp3ybPxJGybWXNEjmX"
-uri = "file://artifacts/community-events/assets/images/icon.png"
-type = "image"
-title = "community events app icon"
