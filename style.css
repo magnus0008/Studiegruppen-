@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: "Times New Roman", Times, serif;
-    background: #FFFFFF; /* ren hvid som i infografikken */
-    color: #3A3F2D; /* jordfarvet tekst */
+    background: #F7F1E6; /* lys beige som plakatbaggrund */
+    color: #243133;      /* mørk grå/grønlig tekst */
 }
 
 /* APP WRAPPER */
@@ -16,47 +16,64 @@ body {
 /* HEADER */
 h1 {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin: 0 0 6px 0;
     font-weight: 700;
-    color: #4A6B3C; /* mørk grøn */
+    color: #1F5C5C; /* dyb blågrøn som “sustainable choices”-farven */
 }
 
-/* KNAPPER */
+/* (valgfrit) underoverskrift – hvis du tilføjer den i HTML */
+h2.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 18px 0;
+    color: #E27A3F; /* varm orange som “rethinking movement”-stemning */
+}
+
+/* KNAPPER – generelt */
 button {
     width: 100%;
     box-sizing: border-box;
     padding: 14px;
     border: none;
-    border-radius: 14px;
-    font-size: 18px;
+    border-radius: 999px; /* pill-form, blød som grafikken */
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
     font-family: "Times New Roman", Times, serif;
 }
 
-/* NAV KNAPPER */
+/* NAV KNAP (Min side / tilbage) */
 .navBtn {
-    background: #4A6B3C; /* mørk grøn */
-    color: white;
+    background: #1F5C5C;
+    color: #F7F1E6;
     margin-bottom: 10px;
+}
+
+.navBtn:hover {
+    background: #174545;
 }
 
 /* OPRET EVENT KNAP */
 #openFormBtn {
-    background: #F4A7B9; /* 🌸 pastel lyserød */
-    color: white;
+    background: #E27A3F; /* varm orange */
+    color: #F7F1E6;
+    margin-bottom: 5px;
 }
 
-/* FORM */
+#openFormBtn:hover {
+    background: #C9632C;
+}
+
+/* FORM-CONTAINER */
 #formContainer {
-    background: #FFF9E9; /* varm gul/beige */
-    padding: 15px;
-    border-radius: 16px;
-    margin-top: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border: 3px solid #F7C6D0; /* lyserød kant */
+    background: #FFFFFF;
+    padding: 16px;
+    border-radius: 18px;
+    margin-top: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    border: 2px solid #F2C48C; /* lys varm gul som i plakaten */
 }
 
 .hidden {
@@ -67,59 +84,71 @@ button {
 input {
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 14px;
+    padding: 10px 12px;
     margin: 8px 0;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 12px;
-    border: 1px solid #A8D39F; /* mild grøn */
-    background: #F9FDF7; /* meget lys grønlig hvid */
+    border: 1px solid #D5D0C6;
+    background: #FBF7F0;
     font-family: "Times New Roman", Times, serif;
 }
 
-/* EVENT CARD */
+/* EVENT-KORT */
 .event {
     background: #FFFFFF;
-    padding: 18px;
-    margin-top: 18px;
+    padding: 16px;
+    margin-top: 16px;
     border-radius: 18px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    transition: 0.2s;
-    border-left: 6px solid #8CCB8A; /* mild grøn accent */
-    border-bottom: 4px solid #F7C6D0; /* lyserød bund */
+    position: relative;
+    overflow: hidden;
 }
 
-.event:hover {
-    transform: translateY(-2px);
+/* Farvebånd i venstre side – matcher de tre “loops” på plakaten */
+.event::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #E27A3F, #1F5C5C);
+    opacity: 0.18;
 }
 
 /* EVENT TITEL */
 .event h2 {
-    margin: 0 0 10px 0;
-    font-size: 22px;
-    color: #4A6B3C; /* mørk grøn */
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #1F5C5C;
 }
 
 /* META INFO */
 .meta {
-    font-size: 16px;
-    color: #5A6A4A; /* grønlig jordfarve */
-    margin: 5px 0;
+    font-size: 14px;
+    color: #4A585A;
+    margin: 4px 0;
 }
 
 /* TILMELD KNAP */
 .join {
-    background: #8CCB8A; /* mild grøn */
-    color: white;
-    margin-top: 12px;
-}
-
-/* MELD FRA / SLET */
-.event button {
-    background: #F7C6D0; /* pastel lyserød */
-    color: #3A3F2D;
+    background: #1F5C5C;
+    color: #F7F1E6;
     margin-top: 10px;
 }
 
+.join:hover {
+    background: #174545;
+}
+
+/* MELD FRA / SLET-KNAPPER INDE I EVENT */
+.event button {
+    background: #F2C48C; /* varm gul */
+    color: #243133;
+    margin-top: 8px;
+}
+
 .event button:hover {
-    background: #F4A7B9; /* mørkere lyserød */
+    background: #E7B16A;
 }
