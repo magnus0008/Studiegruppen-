@@ -1,156 +1,140 @@
-/* GLOBALT */
-body {
-    margin: 0;
-    font-family: "Times New Roman", Times, serif;
-    background: #839c5d; /* mørkegrøn baggrund */
-    color: #623e2a;      /* brun tekst */
+/* =========================
+   SIMPLE / CLEAN VERSION
+========================= */
+
+:root{
+  --cream:#fffaf4;
+  --green:#839c5d;
+  --light:#c8dda8;
+  --brown:#623e2a;
+  --line:#e8dfd4;
 }
 
-/* APP WRAPPER */
-.app {
-    max-width: 430px;
-    margin: auto;
-    padding: 20px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Times New Roman", serif;
+  background:var(--green);
+  color:var(--brown);
+  padding:20px 14px;
+}
+
+/* WRAPPER */
+
+.app{
+  max-width:430px;
+  margin:auto;
+  background:var(--cream);
+  border-radius:22px;
+  padding:22px 16px;
 }
 
 /* HEADER */
-h1 {
-    text-align: center;
-    font-size: 32px;
-    margin: 0 0 10px 0;
-    font-weight: 700;
-    color: #fffaf4; /* hvid tekst */
+
+h1{
+  text-align:center;
+  font-size:32px;
+  color:var(--brown);
+  margin-bottom:4px;
 }
 
-/* Underoverskrift (valgfri) */
-h2.subtitle {
-    text-align: center;
-    font-size: 16px;
-    margin: 0 0 18px 0;
-    color: #fffaf4;
+.subtitle{
+  text-align:center;
+  font-size:15px;
+  color:var(--brown);
+  opacity:.8;
+  margin-bottom:18px;
 }
 
-/* KNAPPER – generelt */
-button {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px;
-    border: none;
-    border-radius: 999px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-    font-family: "Times New Roman", Times, serif;
+/* BUTTONS */
+
+button{
+  width:100%;
+  border:none;
+  border-radius:999px;
+  padding:13px;
+  font-size:16px;
+  font-weight:600;
+  font-family:"Times New Roman", serif;
+  cursor:pointer;
 }
 
-/* NAV KNAP (Min side / tilbage) */
-.navBtn {
-    background: #623e2a; /* brun */
-    color: #fffaf4;
-    margin-bottom: 10px;
+/* MIN SIDE + OPRET EVENT = ENS */
+
+.navBtn,
+#openFormBtn{
+  background:var(--light);
+  color:var(--brown);
+  margin-bottom:10px;
 }
 
-.navBtn:hover {
-    background: #4e2f20;
+/* FORM */
+
+#formContainer{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:16px;
 }
 
-/* OPRET EVENT KNAP */
-#openFormBtn {
-    background: #c8dda8; /* lysegrøn */
-    color: #623e2a;
-    margin-bottom: 5px;
+.hidden{
+  display:none;
 }
 
-#openFormBtn:hover {
-    background: #b5cd90;
+input,
+textarea,
+select{
+  width:100%;
+  padding:11px 12px;
+  margin:7px 0;
+  border-radius:12px;
+  border:1px solid var(--line);
+  font-size:15px;
+  font-family:"Times New Roman", serif;
+  color:var(--brown);
+  background:white;
 }
 
-/* FORM-CONTAINER */
-#formContainer {
-    background: #fffaf4; /* hvid */
-    padding: 16px;
-    border-radius: 18px;
-    margin-top: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    border: 2px solid #c8dda8; /* lysegrøn kant */
+/* EVENTS */
+
+.event{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  margin-top:14px;
 }
 
-.hidden {
-    display: none;
+.event h2{
+  font-size:21px;
+  margin-bottom:10px;
+  color:var(--brown);
 }
 
-/* INPUT FELTER */
-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 12px;
-    margin: 8px 0;
-    font-size: 15px;
-    border-radius: 12px;
-    border: 1px solid #c8dda8;
-    background: #fffaf4;
-    color: #623e2a;
-    font-family: "Times New Roman", Times, serif;
+.meta{
+  font-size:15px;
+  margin-bottom:6px;
+  line-height:1.4;
 }
 
-/* EVENT-KORT */
-.event {
-    background: #fffaf4;
-    padding: 18px;
-    margin-top: 18px;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    position: relative;
-    overflow: hidden;
-    border-left: 6px solid #c8dda8; /* lysegrøn accent */
+/* TILMELD MIG */
+
+.join{
+  background:var(--cream);
+  color:var(--brown);
+  border:2px solid var(--green);
+  margin-top:10px;
 }
 
-/* Dekorativ cirkel – matcher plakatens organiske former */
-.event::before {
-    content: "";
-    position: absolute;
-    left: -25px;
-    top: -25px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #839c5d; /* mørkegrøn */
-    opacity: 0.15;
-}
+/* ANDRE KNAPPER I EVENT */
 
-/* EVENT TITEL */
-.event h2 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-    color: #623e2a; /* brun */
-}
-
-/* META INFO */
-.meta {
-    font-size: 14px;
-    color: #623e2a;
-    margin: 4px 0;
-}
-
-/* TILMELD KNAP */
-.join {
-    background: #839c5d; /* mørkegrøn */
-    color: #fffaf4;
-    margin-top: 10px;
-}
-
-.join:hover {
-    background: #6f854c;
-}
-
-/* MELD FRA / SLET-KNAPPER */
-.event button {
-    background: #c8dda8; /* lysegrøn */
-    color: #623e2a;
-    margin-top: 8px;
-}
-
-.event button:hover {
-    background: #b5cd90;
+.event button:not(.join){
+  background:var(--light);
+  color:var(--brown);
+  margin-top:8px;
 }
